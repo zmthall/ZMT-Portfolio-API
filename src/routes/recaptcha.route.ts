@@ -1,0 +1,13 @@
+// /recaptcha.routes.ts
+import { Router } from 'express';
+import { verifyRecaptcha } from '../controllers/recaptcha.controller.js';
+
+const router = Router();
+
+router.post('/verify', verifyRecaptcha);
+
+router.get('/route/health', (req, res) => {
+    res.status(200).json({ status: 'OK', message: 'Recaptcha Routes are working.' });
+})
+
+export default router;
